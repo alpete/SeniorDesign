@@ -61,7 +61,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Tag="This" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3" VerticalAlignment="Stretch" FontSize="17">
+        <TextBlock Name="ThisBlock" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3" VerticalAlignment="Stretch" FontSize="17">
             <LineBreak/><LineBreak/>Set Supply Voltage (Volts) </TextBlock>
         <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"></TextBox>
         <Button Grid.Row="3" Grid.Column="2">

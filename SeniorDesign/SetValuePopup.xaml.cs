@@ -19,53 +19,32 @@ namespace SeniorDesign
     /// </summary>
     public partial class SetValuePopup : UserControl
     {
-        int mode; // 1 = set supply voltage, 2 = set current limit, 3 = brake constant current, 4 = open loop torque, 5 = closed loop torque
+        string message = "test";
 
         public SetValuePopup(int mode)
         {
-            InitializeComponent();
-            this.mode = mode;
-            foreach (Grid g in FindVisualChildren<Grid>(this))
+            InitializeComponent();        
+            switch (mode)
             {
-                foreach (TextBlock tb in FindVisualChildren<TextBlock>(g))
-                {
-                    if (tb.Tag.Equals("This"))
-                    {
-                        switch (this.mode)
-                        {
-                            case 1:
-                                tb.Text = "Set Supply Voltage (Volts)";
-                                break;
-                            case 2:
-                                tb.Text = "Set Current Limit (Amps)";
-                                break;
-                            case 3:
-                                tb.Text = "Set Brake Constant Current (Amps)";
-                                break;
-                            case 4:
-                                tb.Text = "Set Open Loop Torque";
-                                break;
-                            case 5:
-                                tb.Text = "Set Closed Loop Torque";
-                                break;
-                        }
-                    }
-                }
+                case 1:
+                    message = "\nSet Supply Voltage (Volts)";
+                    break;
+                case 2:
+                    message = "\nSet Current Limit (Amps)";
+                    break;
+                case 3:
+                    message = "\nSet Brake Constant Current (Amps)";
+                    break;
+                case 4:
+                    message = "\nSet Open Loop Torque";
+                    break;
+                case 5:
+                    message = "\nSet Closed Loop Torque";
+                    break;
             }
-            
+            ThisBlock.Text = message;
         }
 
-        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
-        {
-            if (depObj == null) yield return (T)Enumerable.Empty<T>();
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
-            {
-                DependencyObject ithChild = VisualTreeHelper.GetChild(depObj, i);
-                if (ithChild == null) continue;
-                if (ithChild is T t) yield return t;
-                foreach (T childOfChild in FindVisualChildren<T>(ithChild)) yield return childOfChild;
-            }
-        }
 
 
     }
