@@ -80,8 +80,8 @@
             <TextBlock>Graph</TextBlock>
         </Button>
 
-        <TextBlock Name="MainData" Grid.Row="1" Grid.Column="1" 
-                   Grid.ColumnSpan="3" Grid.RowSpan="3" Background="MidnightBlue"></TextBlock>
+        <TextBlock Name="MainData" Grid.Row="1" Grid.Column="1" Margin="15"
+                   Grid.ColumnSpan="3" Grid.RowSpan="4" Background="MidnightBlue"></TextBlock>
     </Grid>
 
 </Window>
