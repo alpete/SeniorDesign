@@ -20,62 +20,107 @@ namespace SeniorDesign
     /// </summary>
     public partial class MainWindow : Window
     {
+        private double supplyVoltage = 0;
+
+        private double supplyCurrentLimit = 0;
+
+        public double brakeConstantCurrent = 0;
+
+        public double openLoopTorque = 0;
+
+        public double closedLoopTorque = 0;
+
+        public double tcTemp = 0;
+
+        public double outputPower = 0;
+
+        public bool motorSuppliedPower = false;
+
+
+        /// <summary>
+        /// Constructor for the main window
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event handler to create a set supply voltage popup window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void SetSupplyVoltage(object sender, RoutedEventArgs e)
         {
             Window window = new Window
             {
                 Title="Set Supply Voltage",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(1)
+                Content = new SetValuePopup(1, this)
             };
             window.ShowDialog();
         }
 
+        /// <summary>
+        /// Event handler to create a set current limit popup window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void SetCurrentLimit(object sender, RoutedEventArgs e)
         {
             Window window = new Window
             {
                 Title = "Set Current Limit",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(2)
+                Content = new SetValuePopup(2, this)
             };
             window.ShowDialog();
         }
 
+        /// <summary>
+        /// Event handler to create a set brake constant current popup window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void SetBrakeConstantCurrent(object sender, RoutedEventArgs e)
         {
             Window window = new Window
             {
                 Title = "Set Brake Constant Current",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(3)
+                Content = new SetValuePopup(3, this)
             };
             window.ShowDialog();
         }
 
+        /// <summary>
+        /// Event handler to create a set open loop torque popup window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void SetOpenLoopTorque(object sender, RoutedEventArgs e)
         {
             Window window = new Window
             {
                 Title = "Set Open Loop Torque",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(4)
+                Content = new SetValuePopup(4, this)
             };
             window.ShowDialog();
         }
 
+        /// <summary>
+        /// Event handler to create a set closed loop torque popup window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void SetClosedLoopTorque(object sender, RoutedEventArgs e)
         {
             Window window = new Window
             {
                 Title = "Set Closed Loop Torque",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(5)
+                Content = new SetValuePopup(5, this)
             };
             window.ShowDialog();
         }
