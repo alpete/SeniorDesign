@@ -36,6 +36,8 @@ namespace SeniorDesign
 
         public bool motorSuppliedPower = false;
 
+        private bool manualModeEngaged = false;
+
 
         /// <summary>
         /// Constructor for the main window

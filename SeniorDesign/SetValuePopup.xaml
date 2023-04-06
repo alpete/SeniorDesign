@@ -66,8 +66,8 @@
         <Button Grid.Row="3" Grid.Column="2" Button.Click="SetValue">
             <TextBlock FontSize="12">Set Value</TextBlock>
         </Button>
-        <Button Grid.Row="3" Margin="3" Height="45" Width="60" Grid.Column="1" Foreground="White" FontSize="32" Button.Click="DecrementValue">-</Button>
-        <Button Grid.Row="3" Margin="3" Height="45" Width="60" Grid.Column="3" Foreground="White" FontSize="32" Button.Click="IncrementValue">+</Button>
+        <Button Grid.Row="3" Margin="3" Height="45" Width="60" Grid.Column="1" Foreground="White" FontSize="32" VerticalContentAlignment="Top" Button.Click="DecrementValue">-</Button>
+        <Button Grid.Row="3" Margin="3" Height="45" Width="60" Grid.Column="3" Foreground="White" FontSize="32" VerticalContentAlignment="Top" Button.Click="IncrementValue">+</Button>
     </Grid>
     
 

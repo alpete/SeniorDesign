@@ -23,7 +23,7 @@ namespace SeniorDesign
 
         private string message = ""; // Field to control the display of which type of popup this is (what value is being set)
 
-        int mode; //Field to indicate what type of popup this is
+        private int mode; //Field to indicate what type of popup this is
 
         /// <summary>
         /// Constructor for the set value popup
