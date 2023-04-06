@@ -19,11 +19,17 @@ namespace SeniorDesign
     /// </summary>
     public partial class SetValuePopup : UserControl
     {
-        private MainWindow parent; // Field to reference the main window in order to set values on the main window
+        private MainWindow parent; // Reference to the main window in order to set values on the main window
 
-        private string message = ""; // Field to control the display of which type of popup this is (what value is being set)
+        private string message; // Controls the display of which type of popup this is (what value is being set)
 
-        private int mode; //Field to indicate what type of popup this is
+        private int mode; // What type of popup this is
+
+        private double min; // Minimum possible value to set 
+        
+        private double max; // Maximum possible value to set
+
+        private double increment; // Increment of + and - buttons
 
         /// <summary>
         /// Constructor for the set value popup
@@ -32,28 +38,43 @@ namespace SeniorDesign
         public SetValuePopup(int mode, MainWindow window, double currentValue)
         {
             InitializeComponent();
-            this.mode = mode;
-            switch (this.mode) //depending on the mode, change the main message of the popup
+            this.mode = mode; //set the mode of the window to be the passed in value
+            switch (this.mode) // depending on the mode, adjust settings of the popup window
             {
                 case 1:
                     message = "\nSet Supply Voltage (Volts)";
+                    min = 0;
+                    max = 30;
+                    increment = 1;
                     break;
                 case 2:
                     message = "\nSet Current Limit (Amps)";
+                    min = 0;
+                    max = 3;
+                    increment = .1;
                     break;
                 case 3:
                     message = "\nSet Brake Constant Current (Amps)";
+                    min = 0;
+                    max = 10;
+                    increment = .1;
                     break;
                 case 4:
                     message = "\nSet Open Loop Torque (oz in)";
+                    min = 0;
+                    max = 50;
+                    increment = 1;
                     break;
                 case 5:
                     message = "\nSet Closed Loop Torque (oz in)";
+                    min = 0;
+                    max = 50;
+                    increment = 1;
                     break;
             }
-            ThisBlock.Text = message; //set the text display of the window accordingly
-            TextBox.Text = Convert.ToString(currentValue);
-            parent = window; //set the parent to be the passed in reference to the main window
+            ThisBlock.Text = message; // set the text display of the window accordingly
+            TextBox.Text = Convert.ToString(currentValue); // populate the starting value on the popup with the current reading from the main window
+            parent = window; // set the parent to be the passed in reference to the main window
         }
 
         /// <summary>
@@ -63,8 +84,21 @@ namespace SeniorDesign
         /// <param name="e"></param>
         public void SetValue(object sender, RoutedEventArgs e)
         {
+            if (MainWindow.manualModeEngaged == false) // can only set a value if manual mode is not engaged 
+            {
+                double currentVal = Convert.ToDouble(TextBox.Text);
+                if(currentVal < min || currentVal > max)
+                {
+                    MessageBox.Show("ERROR: Value out of range. Value will not be set.");
+                }
+                else
+                {
+                    // code to set value on main window (will need to use parent field)
 
-            Window.GetWindow(this).Close(); //once done, close the popup window
+                    Window.GetWindow(this).Close(); // once done, close the popup window
+                }  
+            }
+            else MessageBox.Show("ERROR: Manual Mode is engaged, cannot currently set this value"); //display error message indicating current mode of operation
         }
 
         /// <summary>
@@ -74,9 +108,16 @@ namespace SeniorDesign
         /// <param name="e"></param>
         public void DecrementValue(object sender, RoutedEventArgs e)
         {
-            double current = Convert.ToDouble(TextBox.Text);
-            current--;
-            TextBox.Text = Convert.ToString(current);
+            double currentVal = Convert.ToDouble((string)TextBox.Text); // get the current value as a double
+            if (currentVal - increment < min )
+            {
+                MessageBox.Show("ERROR: Intended value out of range. Current value will not be decremented.");
+            }
+            else
+            {
+                currentVal -= increment; // subtract the increment from the current value
+                TextBox.Text = currentVal.ToString("0.####"); // set the new value
+            }  
         }
 
         /// <summary>
@@ -86,10 +127,18 @@ namespace SeniorDesign
         /// <param name="e"></param>
         public void IncrementValue(object sender, RoutedEventArgs e)
         {
-            double current = Convert.ToDouble(TextBox.Text);
-            current++;
-            TextBox.Text = Convert.ToString(current);
+            double currentVal = Convert.ToDouble((string)TextBox.Text); // get the current value as a double
+            if (currentVal + increment > max)
+            {
+                MessageBox.Show("ERROR: Intended value out of range. Current value will not be incremented.");
+            }
+            else
+            {
+                currentVal += increment; // add the increment to the current value
+                TextBox.Text = currentVal.ToString("0.####"); // set the new value
+            }  
         }
+
 
     }
 }

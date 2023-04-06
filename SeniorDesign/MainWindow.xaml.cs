@@ -24,19 +24,17 @@ namespace SeniorDesign
 
         private double supplyCurrentLimit = 0;
 
-        public double brakeConstantCurrent = 0;
+        private double brakeConstantCurrent = 0;
 
-        public double openLoopTorque = 0;
+        private double openLoopTorque = 0;
 
-        public double closedLoopTorque = 0;
+        private double closedLoopTorque = 0;
 
-        public double tcTemp = 0;
+        private double tcTemp = 0;
 
-        public double outputPower = 0;
+        private double outputPower = 0;
 
-        public bool motorSuppliedPower = false;
-
-        private bool manualModeEngaged = false;
+        public static bool manualModeEngaged = false;
 
 
         /// <summary>
