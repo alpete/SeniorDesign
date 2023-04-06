@@ -82,7 +82,22 @@
 
         <TextBlock Name="MainData" Grid.Row="1" Grid.Column="1" Margin="15"
                    Grid.ColumnSpan="3" Grid.RowSpan="4" Background="MidnightBlue">
-            
+            <Label Name="SupplyVoltage" FontSize="20" Foreground="White">Supply Voltage (Volts): </Label>
+            <LineBreak/>
+            <Label Name="SupplyCurrent" FontSize="20" Foreground="White">Supply Current (Amps): </Label>
+            <LineBreak/>
+            <Label Name="BrakeCurrent" FontSize="20" Foreground="White">Brake Current (Amps): </Label>
+            <LineBreak/>
+            <Label Name="LoadCellTorque" FontSize="20" Foreground="White">Load Cell Torque (oz in): </Label>
+            <LineBreak/>
+            <Label Name="TachSpeed" FontSize="20" Foreground="White">Tach Speed (RPM): </Label>
+            <LineBreak/>
+            <Label Name="TCTemp" FontSize="20" Foreground="White">TC Temp (°C): </Label>
+            <LineBreak/>
+            <Label Name="OutputPower" FontSize="20" Foreground="White">Output Power (Watts): </Label>
+            <LineBreak/>
+            <Label Name="SystemEfficiency" FontSize="20" Foreground="White">System Efficiency: </Label>
+            <LineBreak/>
         </TextBlock>
     </Grid>
 
