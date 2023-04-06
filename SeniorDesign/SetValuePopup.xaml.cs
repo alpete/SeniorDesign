@@ -27,7 +27,7 @@ namespace SeniorDesign
         /// Constructor for the set value popup
         /// </summary>
         /// <param name="mode">Integer variable that determines what type of popup this is</param>
-        public SetValuePopup(int mode, MainWindow window)
+        public SetValuePopup(int mode, MainWindow window, double currentValue)
         {
             InitializeComponent();        
             switch (mode) //depending on the mode, change the main message of the popup
@@ -49,6 +49,7 @@ namespace SeniorDesign
                     break;
             }
             ThisBlock.Text = message; //set the text display of the window accordingly
+            TextBox.Text = Convert.ToString(currentValue);
             parent = window; //set the parent to be the passed in reference to the main window
         }
 

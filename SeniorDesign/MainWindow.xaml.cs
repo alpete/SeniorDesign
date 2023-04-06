@@ -56,7 +56,7 @@ namespace SeniorDesign
             {
                 Title="Set Supply Voltage",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(1, this)
+                Content = new SetValuePopup(1, this, Convert.ToDouble(SupplyVoltageData.Content))
             };
             window.ShowDialog();
         }
@@ -72,7 +72,7 @@ namespace SeniorDesign
             {
                 Title = "Set Current Limit",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(2, this)
+                Content = new SetValuePopup(2, this, Convert.ToDouble(SupplyCurrentData.Content))
             };
             window.ShowDialog();
         }
@@ -88,7 +88,7 @@ namespace SeniorDesign
             {
                 Title = "Set Brake Constant Current",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(3, this)
+                Content = new SetValuePopup(3, this, Convert.ToDouble(BrakeCurrentData.Content))
             };
             window.ShowDialog();
         }
@@ -104,7 +104,7 @@ namespace SeniorDesign
             {
                 Title = "Set Open Loop Torque",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(4, this)
+                Content = new SetValuePopup(4, this, openLoopTorque)
             };
             window.ShowDialog();
         }
@@ -120,7 +120,7 @@ namespace SeniorDesign
             {
                 Title = "Set Closed Loop Torque",
                 Height = 250, Width = 400,
-                Content = new SetValuePopup(5, this)
+                Content = new SetValuePopup(5, this, closedLoopTorque)
             };
             window.ShowDialog();
         }
