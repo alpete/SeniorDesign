@@ -23,14 +23,17 @@ namespace SeniorDesign
 
         private string message = ""; // Field to control the display of which type of popup this is (what value is being set)
 
+        int mode; //Field to indicate what type of popup this is
+
         /// <summary>
         /// Constructor for the set value popup
         /// </summary>
         /// <param name="mode">Integer variable that determines what type of popup this is</param>
         public SetValuePopup(int mode, MainWindow window, double currentValue)
         {
-            InitializeComponent();        
-            switch (mode) //depending on the mode, change the main message of the popup
+            InitializeComponent();
+            this.mode = mode;
+            switch (this.mode) //depending on the mode, change the main message of the popup
             {
                 case 1:
                     message = "\nSet Supply Voltage (Volts)";
@@ -62,6 +65,30 @@ namespace SeniorDesign
         {
 
             Window.GetWindow(this).Close(); //once done, close the popup window
+        }
+
+        /// <summary>
+        /// Event handler to decrement the current value by one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void DecrementValue(object sender, RoutedEventArgs e)
+        {
+            double current = Convert.ToDouble(TextBox.Text);
+            current--;
+            TextBox.Text = Convert.ToString(current);
+        }
+
+        /// <summary>
+        /// Event handler to increment the current value by one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void IncrementValue(object sender, RoutedEventArgs e)
+        {
+            double current = Convert.ToDouble(TextBox.Text);
+            current++;
+            TextBox.Text = Convert.ToString(current);
         }
 
     }

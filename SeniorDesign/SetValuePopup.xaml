@@ -60,12 +60,14 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Name="ThisBlock" Background="MidnightBlue" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3" VerticalAlignment="Stretch" FontSize="17">
-            <LineBreak/><LineBreak/>Set Supply Voltage (Volts) </TextBlock>
+        <TextBlock Name="ThisBlock" Margin="10" Background="MidnightBlue" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3" VerticalAlignment="Stretch" FontSize="17">
+            <LineBreak/><LineBreak/>Set Supply Voltage (Volts)</TextBlock>
         <TextBox FontSize="14" HorizontalContentAlignment="Center" Name="TextBox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"></TextBox>
         <Button Grid.Row="3" Grid.Column="2" Button.Click="SetValue">
             <TextBlock FontSize="12">Set Value</TextBlock>
         </Button>
+        <Button Grid.Row="3" Margin="3" Height="45" Width="60" Grid.Column="1" Foreground="White" FontSize="32" Button.Click="DecrementValue">-</Button>
+        <Button Grid.Row="3" Margin="3" Height="45" Width="60" Grid.Column="3" Foreground="White" FontSize="32" Button.Click="IncrementValue">+</Button>
     </Grid>
     
 
