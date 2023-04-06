@@ -76,12 +76,14 @@
         <Button Grid.Row="0" Grid.Column="2" FontSize="16">
             <TextBlock>Export<LineBreak/>Data</TextBlock>
         </Button>
-        <Button Grid.Row="0" Grid.Column="5" FontSize="18">
+        <Button Grid.Row="0" Grid.Column="5" FontSize="18" Button.Click="SelectGraph">
             <TextBlock>Graph</TextBlock>
         </Button>
 
         <TextBlock Name="MainData" Grid.Row="1" Grid.Column="1" Margin="15"
-                   Grid.ColumnSpan="3" Grid.RowSpan="4" Background="MidnightBlue"></TextBlock>
+                   Grid.ColumnSpan="3" Grid.RowSpan="4" Background="MidnightBlue">
+            
+        </TextBlock>
     </Grid>
 
 </Window>

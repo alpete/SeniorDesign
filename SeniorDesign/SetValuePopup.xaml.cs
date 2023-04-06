@@ -59,7 +59,8 @@ namespace SeniorDesign
         /// <param name="e"></param>
         public void SetValue(object sender, RoutedEventArgs e)
         {
-            
+
+            Window.GetWindow(this).Close(); //once done, close the popup window
         }
 
     }

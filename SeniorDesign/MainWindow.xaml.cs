@@ -125,6 +125,22 @@ namespace SeniorDesign
             window.ShowDialog();
         }
 
+        /// <summary>
+        /// Event handler for the graph button to generate and display curves of the monitored data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void SelectGraph(object sender, RoutedEventArgs e)
+        {
+            Window window = new Window
+            {
+                Title = "Select Graph",
+                Height = 250, Width = 400,
+                Content = new GraphPopup(this)
+            };
+            window.ShowDialog();
+        }
+
 
     }
 }
