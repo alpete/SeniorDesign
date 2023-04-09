@@ -87,14 +87,30 @@ namespace SeniorDesign
             if (MainWindow.manualModeEngaged == false) // can only set a value if manual mode is not engaged 
             {
                 double currentVal = Convert.ToDouble(TextBox.Text);
-                if(currentVal < min || currentVal > max)
+                if(currentVal < min || currentVal > max) // if the value entered into the window is not within the allowed range
                 {
                     MessageBox.Show("ERROR: Value out of range. Value will not be set.");
                 }
                 else
                 {
-                    // code to set value on main window (will need to use parent field)
-
+                    switch (mode) // depending on the mode, set the associated value back on the main window
+                    {
+                        case 1:
+                            parent.SupplyVoltageData.Content = currentVal.ToString("0.####");
+                            break;
+                        case 2:
+                            parent.SupplyCurrentData.Content = currentVal.ToString("0.####");
+                            break;
+                        case 3:
+                            parent.BrakeCurrentData.Content = currentVal.ToString("0.####");
+                            break;
+                        case 4:
+                            parent.LoadCellTorqueData.Content = currentVal.ToString("0.####"); // should this set load cell torque on home page? open vs closed loop bool indicator? Or display both?
+                            break;
+                        case 5:
+                            parent.LoadCellTorqueData.Content = currentVal.ToString("0.####"); // should this set load cell torque on home page? open vs closed loop bool indicator? Or display both?
+                            break;
+                    }
                     Window.GetWindow(this).Close(); // once done, close the popup window
                 }  
             }

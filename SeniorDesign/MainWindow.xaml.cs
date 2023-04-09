@@ -141,6 +141,16 @@ namespace SeniorDesign
             window.ShowDialog();
         }
 
+        /// <summary>
+        /// Event handler to export current readings to a CSV file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ExportData(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
 
     }
 }
