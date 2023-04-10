@@ -34,7 +34,7 @@ namespace SeniorDesign
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void GraphData(object sender, RoutedEventArgs e)
+        private void GraphData(object sender, RoutedEventArgs e)
         {
 
             Window.GetWindow(this).Close(); //once done, close the popup window

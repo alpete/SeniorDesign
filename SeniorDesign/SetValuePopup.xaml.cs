@@ -82,7 +82,7 @@ namespace SeniorDesign
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void SetValue(object sender, RoutedEventArgs e)
+        private void SetValue(object sender, RoutedEventArgs e)
         {
             if (MainWindow.manualModeEngaged == false) // can only set a value if manual mode is not engaged 
             {
@@ -97,18 +97,23 @@ namespace SeniorDesign
                     {
                         case 1:
                             parent.SupplyVoltageData.Content = currentVal.ToString("0.####");
+                            parent.SetSupplyVoltageField(currentVal);
                             break;
                         case 2:
                             parent.SupplyCurrentData.Content = currentVal.ToString("0.####");
+                            parent.SetSupplyCurrentLimitField(currentVal);
                             break;
                         case 3:
                             parent.BrakeCurrentData.Content = currentVal.ToString("0.####");
+                            parent.SetBrakeConstantCurrentField(currentVal);
                             break;
                         case 4:
                             parent.LoadCellTorqueData.Content = currentVal.ToString("0.####"); // should this set load cell torque on home page? open vs closed loop bool indicator? Or display both?
+                            
                             break;
                         case 5:
                             parent.LoadCellTorqueData.Content = currentVal.ToString("0.####"); // should this set load cell torque on home page? open vs closed loop bool indicator? Or display both?
+
                             break;
                     }
                     Window.GetWindow(this).Close(); // once done, close the popup window
@@ -122,7 +127,7 @@ namespace SeniorDesign
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void DecrementValue(object sender, RoutedEventArgs e)
+        private void DecrementValue(object sender, RoutedEventArgs e)
         {
             double currentVal = Convert.ToDouble((string)TextBox.Text); // get the current value as a double
             if (currentVal - increment < min )
@@ -141,7 +146,7 @@ namespace SeniorDesign
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void IncrementValue(object sender, RoutedEventArgs e)
+        private void IncrementValue(object sender, RoutedEventArgs e)
         {
             double currentVal = Convert.ToDouble((string)TextBox.Text); // get the current value as a double
             if (currentVal + increment > max)
