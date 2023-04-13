@@ -34,9 +34,15 @@ namespace SeniorDesign
 
         private double outputPower = 0;
 
-        public static bool manualModeEngaged = false;
+        private double inputPower = 0;
 
+        private double systemEfficiency = 0; // will be a function of input power and output power
 
+        public static bool closedLoopEngaged = false; // determines whether the system is in open loop or closed loop mode
+
+        public static bool manualModeEngaged = false; // determines whether the system is being manually controlled or controlled by the remote terminal
+
+        
         /// <summary>
         /// Constructor for the main window
         /// </summary>
@@ -52,6 +58,7 @@ namespace SeniorDesign
         public void SetClosedLoopTorqueField(double val) { closedLoopTorque = val; } // setter for closed loop torque field
         public void SetTCTempField(double val) { tcTemp = val; } // setter for TC temp field
         public void SetOutputPowerField(double val) { outputPower = val; } // setter for output power field
+        public void SetInputPowerField(double val) { inputPower = val; } // setter for intput power field
 
         /// <summary>
         /// Event handler to create a set supply voltage popup window
@@ -106,11 +113,11 @@ namespace SeniorDesign
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SetOpenLoopTorque(object sender, RoutedEventArgs e)
+        private void SetLoadCellTorque(object sender, RoutedEventArgs e)
         {
             Window window = new Window
             {
-                Title = "Set Open Loop Torque",
+                Title = "Set Load Cell Torque",
                 Height = 250, Width = 400,
                 Content = new SetValuePopup(4, this, openLoopTorque)
             };
@@ -118,19 +125,23 @@ namespace SeniorDesign
         }
 
         /// <summary>
-        /// Event handler to create a set closed loop torque popup window
+        /// Event handler to change the loop mode of operation (open or closed)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SetClosedLoopTorque(object sender, RoutedEventArgs e)
+        private void ChangeLoopMode(object sender, RoutedEventArgs e)
         {
-            Window window = new Window
+            if (closedLoopEngaged == true) // if in closed loop mode
             {
-                Title = "Set Closed Loop Torque",
-                Height = 250, Width = 400,
-                Content = new SetValuePopup(5, this, closedLoopTorque)
-            };
-            window.ShowDialog();
+                closedLoopEngaged = false; // switch to open loop mode
+                TorqueMode.Content = "Open Loop Mode"; // update the display
+
+            }
+            else if (closedLoopEngaged == false) // if in open loop mode
+            {
+                closedLoopEngaged = true; // switch to closed loop mode
+                TorqueMode.Content = "Closed Loop Mode"; // update the display
+            }
         }
 
         /// <summary>

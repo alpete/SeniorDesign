@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SeniorDesign"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="460" Width="800">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
@@ -58,19 +58,19 @@
         </Grid.RowDefinitions>
         
         <Button Grid.Row="0" Button.Click="SetSupplyVoltage">
-            <TextBlock>Set Supply<LineBreak/>Voltage</TextBlock>
+            <TextBlock>Set Motor <LineBreak/>Supply Voltage</TextBlock>
         </Button>
         <Button Grid.Row="1" Button.Click="SetCurrentLimit">
-            <TextBlock>Set Current<LineBreak/>Limit</TextBlock>
+            <TextBlock>Set Motor<LineBreak/>Current Limit</TextBlock>
         </Button>
         <Button Grid.Row="2" Button.Click="SetBrakeConstantCurrent">
             <TextBlock>Set Brake<LineBreak/>Constant<LineBreak/>Current</TextBlock>
         </Button>
-        <Button Grid.Row="3" Button.Click="SetOpenLoopTorque">
-            <TextBlock>Set Open-<LineBreak/>Loop Torque</TextBlock>
+        <Button Grid.Row="3" Button.Click="SetLoadCellTorque">
+            <TextBlock>Set Load<LineBreak/>Cell Torque</TextBlock>
         </Button>
-        <Button Grid.Row="4" Button.Click="SetClosedLoopTorque">
-            <TextBlock>Set Closed-<LineBreak/>Loop Torque</TextBlock>
+        <Button Grid.Row="4" Button.Click="ChangeLoopMode">
+            <TextBlock>Change<LineBreak/>Loop Mode</TextBlock>
         </Button>
 
         <Button Grid.Row="0" Grid.Column="2" FontSize="16">
@@ -80,31 +80,33 @@
             <TextBlock>Graph</TextBlock>
         </Button>
 
-        <TextBlock Name="MainData" Grid.Row="1" Grid.Column="1" Margin="15"
+        <TextBlock Name="MainData" Grid.Row="1" Grid.Column="1" Margin="10"
                    Grid.ColumnSpan="3" Grid.RowSpan="4" Background="MidnightBlue">
-            <Label Name="SupplyVoltage" FontSize="20" Foreground="White">Supply Voltage (Volts): </Label> 
-            <Label Name="SupplyVoltageData" Foreground="White" FontSize="20"> 0.0</Label>
+            <Label Name="TorqueMode" Foreground="Yellow" FontWeight="Bold" FontSize="20">Open Loop Mode</Label>
             <LineBreak/>
-            <Label Name="SupplyCurrent" FontSize="20" Foreground="White">Supply Current (Amps): </Label>
-            <Label Name="SupplyCurrentData" Foreground="White" FontSize="20"> 0.0</Label>
+            <Label Name="SupplyVoltage" FontSize="19" Foreground="White">Supply Voltage (Volts): </Label> 
+            <Label Name="SupplyVoltageData" Foreground="White" FontSize="19"> 0.0</Label>
             <LineBreak/>
-            <Label Name="BrakeCurrent" FontSize="20" Foreground="White">Brake Current (Amps): </Label>
-            <Label Name="BrakeCurrentData" Foreground="White" FontSize="20"> 0.0</Label>
+            <Label Name="SupplyCurrent" FontSize="19" Foreground="White">Supply Current (Amps): </Label>
+            <Label Name="SupplyCurrentData" Foreground="White" FontSize="19"> 0.0</Label>
             <LineBreak/>
-            <Label Name="LoadCellTorque" FontSize="20" Foreground="White">Load Cell Torque (oz in): </Label>
-            <Label Name="LoadCellTorqueData" Foreground="White" FontSize="20"> 0.0</Label>
+            <Label Name="BrakeCurrent" FontSize="19" Foreground="White">Brake Current (Amps): </Label>
+            <Label Name="BrakeCurrentData" Foreground="White" FontSize="19"> 0.0</Label>
             <LineBreak/>
-            <Label Name="TachSpeed" FontSize="20" Foreground="White">Tach Speed (RPM): </Label>
-            <Label Name="TachSpeedData" Foreground="White" FontSize="20"> 0.0</Label>
+            <Label Name="LoadCellTorque" FontSize="19" Foreground="White">Load Cell Torque (oz in): </Label>
+            <Label Name="LoadCellTorqueData" Foreground="White" FontSize="19"> 0.0</Label>
             <LineBreak/>
-            <Label Name="TCTemp" FontSize="20" Foreground="White">TC Temp (°C): </Label>
-            <Label Name="TCTempData" Foreground="White" FontSize="20"> 0.0</Label>
+            <Label Name="TachSpeed" FontSize="19" Foreground="White">Tach Speed (RPM): </Label>
+            <Label Name="TachSpeedData" Foreground="White" FontSize="19"> 0.0</Label>
             <LineBreak/>
-            <Label Name="OutputPower" FontSize="20" Foreground="White">Output Power (Watts): </Label>
-            <Label Name="OutputPowerData" Foreground="White" FontSize="20"> 0.0</Label>
+            <Label Name="TCTemp" FontSize="19" Foreground="White">TC Temp (°C): </Label>
+            <Label Name="TCTempData" Foreground="White" FontSize="19"> 0.0</Label>
             <LineBreak/>
-            <Label Name="SystemEfficiency" FontSize="20" Foreground="White">System Efficiency: </Label>
+            <Label Name="OutputPower" FontSize="19" Foreground="White">Output Power (Watts): </Label>
+            <Label Name="OutputPowerData" Foreground="White" FontSize="19"> 0.0</Label>
             <LineBreak/>
+            <Label Name="SystemEfficiency" FontSize="19" Foreground="White">System Efficiency: </Label>
+            <Label Name="SystemEfficiencyData" Foreground="White" FontSize="19"> 0.0%</Label>
         </TextBlock>
     </Grid>
 

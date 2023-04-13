@@ -42,33 +42,27 @@ namespace SeniorDesign
             switch (this.mode) // depending on the mode, adjust settings of the popup window
             {
                 case 1:
-                    message = "\nSet Supply Voltage (Volts)";
+                    message = "\nSet Motor Supply Voltage (Volts)";
                     min = 0;
-                    max = 30;
-                    increment = 1;
+                    max = 24;
+                    increment = .5;
                     break;
                 case 2:
-                    message = "\nSet Current Limit (Amps)";
+                    message = "\nSet Motor Current Limit (Amps)";
                     min = 0;
-                    max = 3;
+                    max = 5.4;
                     increment = .1;
                     break;
                 case 3:
                     message = "\nSet Brake Constant Current (Amps)";
                     min = 0;
-                    max = 10;
+                    max = 3;
                     increment = .1;
                     break;
                 case 4:
-                    message = "\nSet Open Loop Torque (oz in)";
+                    message = "\nSet Load Cell Torque (oz in)";
                     min = 0;
-                    max = 50;
-                    increment = 1;
-                    break;
-                case 5:
-                    message = "\nSet Closed Loop Torque (oz in)";
-                    min = 0;
-                    max = 50;
+                    max = 41;
                     increment = 1;
                     break;
             }
@@ -108,12 +102,7 @@ namespace SeniorDesign
                             parent.SetBrakeConstantCurrentField(currentVal);
                             break;
                         case 4:
-                            parent.LoadCellTorqueData.Content = currentVal.ToString("0.####"); // should this set load cell torque on home page? open vs closed loop bool indicator? Or display both?
-                            
-                            break;
-                        case 5:
-                            parent.LoadCellTorqueData.Content = currentVal.ToString("0.####"); // should this set load cell torque on home page? open vs closed loop bool indicator? Or display both?
-
+                            parent.LoadCellTorqueData.Content = currentVal.ToString("0.####");  
                             break;
                     }
                     Window.GetWindow(this).Close(); // once done, close the popup window
