@@ -46,26 +46,32 @@ namespace SeniorDesign
                     min = 0;
                     max = 24;
                     increment = .5;
+                    slValue.TickFrequency = 2;
                     break;
                 case 2:
                     message = "\nSet Motor Current Limit (Amps)";
                     min = 0;
                     max = 5.4;
                     increment = .1;
+                    slValue.TickFrequency = .6;
                     break;
                 case 3:
                     message = "\nSet Brake Constant Current (Amps)";
                     min = 0;
                     max = 3;
                     increment = .1;
+                    slValue.TickFrequency = .25;
                     break;
                 case 4:
                     message = "\nSet Load Cell Torque (oz in)";
                     min = 0;
                     max = 41;
                     increment = 1;
+                    slValue.TickFrequency = 3;
                     break;
             }
+            slValue.Minimum = min;
+            slValue.Maximum = max;
             ThisBlock.Text = message; // set the text display of the window accordingly
             TextBox.Text = Convert.ToString(currentValue); // populate the starting value on the popup with the current reading from the main window
             parent = window; // set the parent to be the passed in reference to the main window
