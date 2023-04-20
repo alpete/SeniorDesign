@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\SeniorDesign\\SeniorDesign\\SeniorDesign.csproj": {}
+    "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\RemoteTerminal\\SeniorDesign\\SeniorDesign.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\SeniorDesign\\SeniorDesign\\SeniorDesign.csproj": {
+    "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\RemoteTerminal\\SeniorDesign\\SeniorDesign.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\SeniorDesign\\SeniorDesign\\SeniorDesign.csproj",
+        "projectUniqueName": "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\RemoteTerminal\\SeniorDesign\\SeniorDesign.csproj",
         "projectName": "SeniorDesign",
-        "projectPath": "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\SeniorDesign\\SeniorDesign\\SeniorDesign.csproj",
+        "projectPath": "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\RemoteTerminal\\SeniorDesign\\SeniorDesign.csproj",
         "packagesPath": "C:\\Users\\alpet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\SeniorDesign\\SeniorDesign\\obj\\",
+        "outputPath": "C:\\Users\\alpet\\OneDrive\\Documents\\Senior Design\\RemoteTerminal\\SeniorDesign\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alpet\\AppData\\Roaming\\NuGet\\NuGet.Config",

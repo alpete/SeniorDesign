@@ -58,19 +58,19 @@
         </Grid.RowDefinitions>
         
         <Button Grid.Row="0" Button.Click="SetSupplyVoltage">
-            <TextBlock>Set Motor <LineBreak/>Supply Voltage</TextBlock>
+            <TextBlock Foreground="LightGreen">Set Motor <LineBreak/>Supply Voltage</TextBlock>
         </Button>
         <Button Grid.Row="1" Button.Click="SetCurrentLimit">
-            <TextBlock>Set Motor<LineBreak/>Current Limit</TextBlock>
+            <TextBlock Foreground="LightGreen">Set Motor<LineBreak/>Current Limit</TextBlock>
         </Button>
         <Button Grid.Row="2" Button.Click="SetBrakeConstantCurrent">
-            <TextBlock>Set Brake<LineBreak/>Constant<LineBreak/>Current</TextBlock>
+            <TextBlock Foreground="LightGreen">Set Brake<LineBreak/>Constant<LineBreak/>Current</TextBlock>
         </Button>
         <Button Grid.Row="3" Button.Click="SetLoadCellTorque">
-            <TextBlock>Set Load<LineBreak/>Cell Torque</TextBlock>
+            <TextBlock Foreground="LightGreen">Set Load<LineBreak/>Cell Torque</TextBlock>
         </Button>
         <Button Grid.Row="4" Button.Click="ChangeLoopMode">
-            <TextBlock>Change<LineBreak/>Loop Mode</TextBlock>
+            <TextBlock Foreground="Yellow">Change<LineBreak/>Loop Mode</TextBlock>
         </Button>
 
         <Button Grid.Row="0" Grid.Column="2" FontSize="16">
